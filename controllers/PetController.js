@@ -9,6 +9,12 @@ class PetController{
 
        res.status(201).json({message: 'Pet criado com sucesso'})
     }
+
+    static async listarPet(req, res){
+       
+        const pets = await Pet.find().lean();
+        res.json(pets);
+    }
 }
 
 module.exports = PetController

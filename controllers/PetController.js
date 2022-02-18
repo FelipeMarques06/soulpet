@@ -17,8 +17,9 @@ class PetController {
     }
     // Edit Pet
     static async editPet(req, res) {
-        const { id, nome, raca, cor, idade, status } = req.body
-        await Pet.findByIdAndUpdate(id, { nome, raca, cor, idade, status })
+        const {id} = req.params;
+        const { nome, raca, cor, idade, status } = req.body;
+        await Pet.findByIdAndUpdate(id, { nome, raca, cor, idade, status });
 
         res.status(201).json({ message: 'Pet atualizado com sucesso!' })
     }

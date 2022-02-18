@@ -23,6 +23,13 @@ class PetController {
 
         res.status(201).json({ message: 'Pet atualizado com sucesso!' })
     }
+
+    static async deletePet(req, res) {
+        const { id } = req.params;
+        await Pet.findByIdAndDelete(id);
+        
+        res.status(201).json({message: 'Pet deletado com sucesso!'})
+      }
 }
 
 module.exports = PetController

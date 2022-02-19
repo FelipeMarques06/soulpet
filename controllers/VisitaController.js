@@ -16,6 +16,21 @@ class VisitaController {
         res.json(visitas);
     }
 
+    static async editVisita(req, res) {
+        const {id} = req.params;
+        const { data, visitante } = req.body;
+        await Visita.findByIdAndUpdate(id, { data, visitante });
+
+        res.status(201).json({ message: 'Visita atualizada com sucesso!' })
+    }
+
+    static async deleteVisita(req, res) {
+        const { id } = req.params;
+        await Visita.findByIdAndDelete(id);
+        
+        res.status(201).json({message: 'Visita deletada com sucesso!'})
+      }
+
 }
 
 module.exports = VisitaController

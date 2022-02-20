@@ -7,7 +7,8 @@ const Pet = model(
     raca: {type: String, required: true},
     cor: {type: String, required: true},
     idade: {type: String, required: true},
-    status: {type: Boolean, required: true}
+    status: {type: Boolean, required: true},
+
   })
 )
 

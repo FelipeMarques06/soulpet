@@ -16,7 +16,7 @@
 > ## Tecnologias Utilizadas
 
 <p>
-<img align="left" alt="html" src="https://img.shields.io/badge/NodeJS-008000?style=for-the-badge&logo=nodejs&logoColor=white" />
+<img align="left" alt="html" src="https://img.shields.io/badge/NodeJS-008000?style=for-the-badge&logo=node.js&logoColor=white" />
 <img align="left" align="left" alt="css" src="https://img.shields.io/badge/JAVASCRIPT-FFD700?style=for-the-badge&logo=javascript&logoColor=white" />
 <img align="left" align="left" alt="git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
 <img align="left" align="left" alt="git" src="https://img.shields.io/badge/MONGODB-007ACC?style=for-the-badge&logo=mongodb&logoColor=white" />

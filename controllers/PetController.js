@@ -3,8 +3,8 @@ const Pet = require('../models/Pet')
 class PetController {
 
     static async addPet(req, res) {
-        const { nome, raca, cor, idade, status } = req.body
-        const pet = Pet({ nome, raca, cor, idade, status });
+        const { nome, raca, cor, idade, adotado } = req.body
+        const pet = Pet({ nome, raca, cor, idade, adotado });
         await pet.save(); //solicitação remota ao banco
 
         res.status(201).json({ message: 'Pet criado com sucesso' })
@@ -18,8 +18,8 @@ class PetController {
     // Edit Pet
     static async editPet(req, res) {
         const {id} = req.params;
-        const { nome, raca, cor, idade, status } = req.body;
-        await Pet.findByIdAndUpdate(id, { nome, raca, cor, idade, status });
+        const { nome, raca, cor, idade, adotado, adotante } = req.body;
+        await Pet.findByIdAndUpdate(id, { nome, raca, cor, idade, adotado, adotante });
 
         res.status(201).json({ message: 'Pet atualizado com sucesso!' })
     }
@@ -30,6 +30,15 @@ class PetController {
         
         res.status(201).json({message: 'Pet deletado com sucesso!'})
       }
+
+      static async addAdotante(req, res) {
+        const {id} = req.params;
+        const { adotante } = req.body;
+
+        await Pet.findByIdAndUpdate(id, { adotante, adotado: true });
+
+        res.status(201).json({ message: 'Pet adotado com sucesso!' })
+    }
 }
 
 module.exports = PetController
